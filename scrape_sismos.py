@@ -27,8 +27,6 @@ def lambda_handler(event, context):
     # Tomar los últimos 10 sismos
     ultimos_sismos = sismos[:10]
 
-    print(ultimos_sismos)
-    '''
     # Inicializar el recurso de DynamoDB
     dynamodb = boto3.resource('dynamodb')
     table = dynamodb.Table('TablaSismos')
@@ -53,6 +51,3 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'body': ultimos_sismos
     }
-    '''
-
-lambda_handler(None, None)
